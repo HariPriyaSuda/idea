@@ -1,0 +1,32 @@
+@import "../style/variables.scss";
+@import "../style/breakpoints.scss";
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $light-background; // Optional: Add a background color for better visibility
+  }
+  
+  .loader-inner {
+    border: 6px solid #f3f3f3; // Light grey for the outer circle
+    border-top: 6px solid skyblue; // Dynamic primary color (set via SCSS variable)
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  
+    // Responsive scaling for smaller screens
+    @include sm {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  // Keyframes for the spinning animation
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

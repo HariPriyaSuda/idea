@@ -1,0 +1,25 @@
+@import "./breakpoints.scss";
+@import "./variables.scss";
+
+// Title List Styles
+.title-list {
+  margin: 40px 100px;
+  color: $blue; // Apply blue color to the title
+
+  @include sm {
+    margin: 40px 50px; // Reduce margin for small screens
+  }
+}
+
+// List Container Styles
+.list {
+  padding: 0 100px 120px; // Padding: top 0, horizontal 100px, bottom 120px
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; // Enable wrapping for items
+  gap: 25px; // Space between list items
+
+  @include xl {
+    padding: 0 20px 120px; // Adjust padding for extra-large screens
+  }
+}

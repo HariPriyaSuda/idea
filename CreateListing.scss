@@ -1,0 +1,413 @@
+@import "../style/variables.scss";
+@import "../style/breakpoints.scss";
+
+.create-listing {
+  background-color: $lightgrey;
+  padding: 40px 60px 120px;
+
+  @include mm {
+    padding: 40px 20px; // Adjusted padding for medium screens
+  }
+
+  // Main Heading Styles
+  h1 {
+    color: $blue;
+  }
+
+  // Step 1 Styles
+  &_step1 {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+
+    @include sm {
+      padding: 30px 20px; // Adjusted padding for small screens
+    }
+
+    h2 {
+      color: $pinkred;
+    }
+
+    hr {
+      margin: 15px 0 25px;
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      color: $blue;
+    }
+
+    // Category List Styles
+    .category-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0 20px;
+
+      @include lg {
+        padding: 0 20px;
+      }
+
+      @include md {
+        padding: 0; // No padding for medium screens
+      }
+
+      .category {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 110px;
+        height: 90px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &_icon {
+          font-size: 30px;
+          color: black;
+        }
+
+        p {
+          font-weight: 600;
+          text-align: center;
+          color: black;
+        }
+
+        &:hover {
+          border: 2px solid $pinkred;
+          background-color: $lightgrey; // Change background on hover
+        }
+      }
+
+      .selected {
+        border: 2px solid $pinkred;
+        background-color: $lightgrey; // Highlight selected category
+      }
+    }
+
+    // Type List Styles
+    .type-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 600px;
+        padding: 15px 30px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &_text {
+          max-width: 400px;
+
+          h4 {
+            margin-bottom: 5px;
+          }
+        }
+
+        &_icon {
+          font-size: 30px;
+        }
+
+        &:hover {
+          border: 2px solid $pinkred;
+          background-color: $lightgrey; // Change background on hover
+        }
+      }
+
+      .selected {
+        border: 2px solid $pinkred;
+        background-color: $lightgrey; // Highlight selected type
+      }
+    }
+
+    // Layout for full and half sections
+    .full {
+      max-width: 700px;
+    }
+
+    .half {
+      max-width: 700px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+
+      @include ml {
+        display: flex;
+        flex-direction: column; // Stack columns on smaller screens
+        gap: 0;
+      }
+    }
+
+    // Location Input Styles
+    .location {
+      p {
+        font-weight: 700;
+        margin: 20px 0 10px;
+      }
+
+      input {
+        border: 1px solid $grey;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+
+        &:focus {
+          outline: none; // Remove outline on focus
+        }
+      }
+    }
+
+    // Basics Section Styles
+    .basics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+
+      .basic {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 15px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+
+        p {
+          font-weight: 600;
+        }
+
+        &_count {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  // Step 2 Styles
+  &_step2 {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+
+    @include sm {
+      padding: 30px 20px; // Adjusted padding for small screens
+    }
+
+    h2 {
+      color: $pinkred;
+    }
+
+    hr {
+      margin: 15px 0 25px;
+    }
+
+    h3 {
+      margin: 40px 0 20px;
+      color: $blue;
+    }
+
+    // Amenities Section Styles
+    .amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .facility {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 90px;
+        border: 1px solid $grey;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &_icon {
+          font-size: 30px;
+        }
+
+        p {
+          font-weight: 600;
+        }
+
+        &:hover {
+          border: 2px solid $pinkred;
+          background-color: $lightgrey; // Change background on hover
+        }
+      }
+
+      .selected {
+        border: 2px solid $pinkred;
+        background-color: $lightgrey; // Highlight selected facility
+      }
+    }
+
+    // Photos Section Styles
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .photo {
+        position: relative;
+        width: 250px;
+        height: 150px;
+        cursor: move;
+
+        img {
+          width: 100%;
+          height: 100%; // Maintain aspect ratio for images
+        }
+
+        button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 3px;
+          border: none;
+          background-color: rgba(255, 255, 255, 0.8); // Semi-transparent button
+          font-size: 20px;
+          cursor: pointer;
+
+          &:hover {
+            color: $pinkred; // Change color on hover
+          }
+        }
+      }
+
+      // Upload Area Styles
+      label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 1px dashed $grey;
+
+        .icon {
+          font-size: 60px;
+        }
+
+        p {
+          font-weight: 600;
+          text-align: center;
+        }
+      }
+
+      .together {
+        width: 250px;
+        height: 150px;
+      }
+
+      .alone {
+        padding: 40px 100px;
+        border-radius: 10px;
+
+        @include mm {
+          padding: 40px 80px; // Adjusted padding for medium screens
+        }
+
+        @include sm {
+          padding: 40px 30px; // Adjusted padding for small screens
+        }
+      }
+    }
+
+    // Title Input Styles
+    .title {
+      input {
+        border: 1px solid $grey;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+
+        &:focus {
+          outline: none; // Remove outline on focus
+        }
+      }
+    }
+
+    // Description Section Styles
+    .description {
+      p {
+        font-weight: 700;
+        margin: 20px 0 10px;
+      }
+
+      input,
+      textarea {
+        border: 1px solid $grey;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 600px;
+
+        @include ml {
+          width: 450px; // Adjust width for medium-large screens
+        }
+
+        @include md {
+          width: 350px; // Adjust width for medium screens
+        }
+
+        @include sm {
+          width: 280px; // Adjust width for small screens
+        }
+
+        &:focus {
+          outline: none; // Remove outline on focus
+        }
+      }
+
+      span {
+        font-size: 25px;
+        font-weight: 700;
+        margin-right: 20px;
+      }
+
+      .price {
+        width: 200px; // Fixed width for price input
+      }
+    }
+  }
+
+  // Submit Button Styles
+  .submit_btn {
+    display: block;
+    margin: 40px auto; // Center the button
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: $pinkred;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: darken($pinkred, 10%); // Darken button color on hover
+    }
+  }
+}

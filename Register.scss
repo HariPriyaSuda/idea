@@ -1,0 +1,110 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../../public/assets/register.jpg") center;
+  background-size: cover;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 40%;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    transition: width 0.3s ease; // Smooth resizing for responsiveness
+
+    @include lg {
+      width: 60%;
+    }
+
+    @include mm {
+      width: 80%;
+    }
+
+    &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      input {
+        width: 100%;
+        padding: 7px 15px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        outline: none;
+        text-align: center;
+        color: white;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
+
+        &:focus {
+          border-bottom: 1px solid white;
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        cursor: pointer;
+        color: white;
+        font-size: 14px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $pinkred;
+        }
+
+        img {
+          width: 25px;
+          transition: transform 0.3s ease; // Adding interaction effect on the image
+          
+          &:hover {
+            transform: scale(1.1); // Slight zoom effect on hover
+          }
+        }
+      }
+
+      button {
+        margin-top: 15px;
+        width: 50%;
+        @include buttonStyle;
+
+        &:hover {
+          box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+          transform: scale(1.05); // Slight button scaling on hover
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+      margin-top: 10px;
+      text-align: center;
+      transition: text-decoration 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        text-decoration: underline;
+        color: $pinkred; // Changes color on hover for better feedback
+      }
+    }
+  }
+}

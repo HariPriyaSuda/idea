@@ -1,0 +1,98 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  padding: 10px 70px;
+
+  @include lg {
+    padding: 10px 30px; // Adjust padding for large screens
+  }
+
+  // Left Section Styles
+  &_left {
+    max-width: 400px;
+
+    img {
+      max-width: 150px; // Max width for logo
+      margin-bottom: 20px; // Space below logo
+    }
+
+    // Social Icons Styles
+    &_socials {
+      display: flex;
+      gap: 25px; // Space between social icons
+      margin-top: 20px;
+
+      &_icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; // Circular icons
+        background-color: $pinkred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2); // Scale effect on hover
+        }
+      }
+    }
+  }
+
+  // Center Section Styles
+  &_center {
+    text-decoration: none; // Remove underline from text
+
+    ul {
+      list-style: none; // Remove default list styling
+      margin-top: 20px; // Space above the list
+      cursor: pointer; // Cursor change on hover
+
+      li:hover {
+        color: $pinkred; // Change color on list item hover
+      }
+
+      a {
+        text-decoration: none; // Remove underline from links
+        color: black; // Default link color
+
+        &:hover {
+          color: $pinkred; // Change link color on hover
+        }
+      }
+    }
+
+    @include md {
+      display: none; // Hide center section on medium screens
+    }
+  }
+
+  // Right Section Styles
+  &_right {
+    max-width: 350px;
+
+    h3 {
+      margin-bottom: 20px; // Space below heading
+    }
+
+    // Info Section Styles
+    &_info {
+      display: flex;
+
+      p {
+        margin-left: 20px; // Space to the left of paragraphs
+        margin-bottom: 15px; // Space below paragraphs
+      }
+    }
+
+    @include sm {
+      display: none; // Hide right section on small screens
+    }
+  }
+}

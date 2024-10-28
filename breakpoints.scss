@@ -1,0 +1,51 @@
+// Define breakpoints for responsive design
+$breakpoints: (
+  "sm": 480px,
+  "mm": 580px,
+  "md": 720px,
+  "ml": 820px,
+  "lg": 1000px,
+  "xl": 1120px
+);
+
+// Mixin for small devices (max-width: 480px)
+@mixin sm {
+  @media (max-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+// Mixin for medium-small devices (max-width: 580px)
+@mixin mm {
+  @media (max-width: map-get($breakpoints, "mm")) {
+    @content;
+  }
+}
+
+// Mixin for medium devices (max-width: 720px)
+@mixin md {
+  @media (max-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+// Mixin for medium-large devices (max-width: 820px)
+@mixin ml {
+  @media (max-width: map-get($breakpoints, "ml")) {
+    @content;
+  }
+}
+
+// Mixin for large devices (max-width: 1000px)
+@mixin lg {
+  @media (max-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+// Mixin for extra-large devices (max-width: 1120px)
+@mixin xl {
+  @media (max-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}

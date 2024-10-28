@@ -1,0 +1,35 @@
+@import "../style/breakpoints.scss";
+.slide {
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../../public/assets/slide.jpg");
+    background-position: center top;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    h1 {
+      padding: 40px 20px;
+      font-size: 40px;
+      color: white;
+      transition: font-size 0.3s ease, padding 0.3s ease; // Smooth transitions for padding and font-size on screen resize
+  
+      @include lg {
+        font-size: 36px;
+      }
+  
+      @include md {
+        font-size: 32px;
+        padding: 30px 15px;
+      }
+  
+      @include sm {
+        font-size: 28px;
+        padding: 20px 10px;
+      }
+    }
+  }
+  

@@ -1,0 +1,131 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.navbar {
+  padding: 10px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include sm {
+    padding: 10px 20px;
+  }
+
+  img {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  &_search {
+    border: 1px solid $grey;
+    border-radius: 30px;
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    transition: box-shadow 0.3s ease; // Added transition for smooth shadow effect
+
+    input {
+      border: none;
+      outline: none;
+      width: 100%; // Ensures input stretches properly in the search bar
+    }
+
+    &:hover {
+      @include shadow;
+    }
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .host {
+      text-decoration: none;
+      color: $blue;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $pinkred;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    &_account {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border: 1px solid $grey;
+      border-radius: 30px;
+      background-color: white;
+      gap: 10px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        @include shadow;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; // Rounded avatar image
+      }
+    }
+
+    &_accountmenu {
+      position: absolute;
+      background-color: white;
+      right: 60px;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      padding: 10px 0;
+      border: 1px solid $lightgrey;
+      border-radius: 20px;
+      z-index: 9999;
+      transition: opacity 0.3s ease; // Smooth opening effect
+      opacity: 0; // Initially hidden
+      visibility: hidden; // Hidden from view
+      pointer-events: none;
+
+      &.active {
+        opacity: 1; // Show the menu when active
+        visibility: visible;
+        pointer-events: all;
+      }
+
+      @include sm {
+        right: 20px;
+      }
+
+      a {
+        width: 100%;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: $blue;
+        font-weight: 700;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          color: $pinkred;
+          background-color: rgba(217, 213, 213, 0.2);
+        }
+      }
+    }
+  }
+}

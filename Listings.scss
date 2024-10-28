@@ -1,0 +1,59 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+// Category list styling
+.category-list {
+  padding: 50px 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+
+  // Responsive padding adjustment for small screens
+  @include sm {
+    padding: 50px 20px;
+  }
+
+  // Individual category item styling
+  .category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $darkgrey;
+    cursor: pointer;
+
+    &_icon {
+      font-size: 30px;
+    }
+
+    // Text styling within category
+    p {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    // Hover effect for category items
+    &:hover {
+      color: $pinkred;
+    }
+  }
+
+  // Styling for the selected category
+  .selected {
+    color: $pinkred;
+  }
+}
+
+// Listings section styling
+.listings {
+  padding: 0 60px 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+
+  // Padding adjustment for larger screens
+  @include lg {
+    padding: 0 20px 120px;
+  }
+}
